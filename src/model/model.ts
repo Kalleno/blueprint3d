@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-/// <reference path="../../lib/three.d.ts" />
-/// <reference path="../../lib/jQuery.d.ts" />
-/// <reference path="../io/format.ts" />
-=======
->>>>>>> pr/2
 /// <reference path="floorplan.ts" />
 /// <reference path="scene.ts" />
 

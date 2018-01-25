@@ -19,7 +19,7 @@ module BP3D.Items {
     private hover = false;
 
     /** */
-    private selected = false;
+    public selected = false;
 
     /** */
     private highlighted = false;

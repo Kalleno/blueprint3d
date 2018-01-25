@@ -40,6 +40,8 @@ module BP3D.Three {
     this.needsUpdate = true;
 
     function init() {
+
+
       element.mousedown(mouseDownEvent);
       element.mouseup(mouseUpEvent);
       element.mousemove(mouseMoveEvent);

@@ -23,17 +23,10 @@ module BP3D.Three {
     var basePlanes = []; // always visible
     var texture = null;
 
-<<<<<<< HEAD
-    var id = null; //for hierarchy
+    var loader = new THREE.TextureLoader();
 
-    // new texture loader
-    //var loader = new THREE.TextureLoader();
-    //var lightMap = loader.load("rooms/textures/walllightmap.png");
+    var lightMap = loader.load("rooms/textures/walllightmap.png");
 
-    var lightMap = THREE.ImageUtils.loadTexture("rooms/textures/walllightmap.png");
-=======
-    var lightMap = scene.textureLoader.load("rooms/textures/walllightmap.png");
->>>>>>> pr/2
     var fillerColor = 0xdddddd;
     var sideColor = 0xcccccc;
     var baseColor = 0xdddddd;
@@ -160,17 +153,18 @@ module BP3D.Three {
       var stretch = textureData.stretch;
       var url = textureData.url;
       var scale = textureData.scale;
-<<<<<<< HEAD
+
 
       // new texture loader
       //var loader = new THREE.TextureLoader();
       //texture = loader.load(url, callback);
 
       texture = THREE.ImageUtils.loadTexture(url, null, callback);
+      var loader = new THREE.TextureLoader();
 
-=======
-      texture = scene.textureLoader.load(url, callback);
->>>>>>> pr/2
+
+      texture = loader.load(url, callback);
+
       if (!stretch) {
         var height = wall.height;
         var width = edge.interiorDistance();

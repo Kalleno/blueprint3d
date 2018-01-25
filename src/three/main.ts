@@ -6,6 +6,7 @@
 /// <reference path="hud.ts" />
 
 module BP3D.Three {
+    import Item = BP3D.Items.Item;
 
     export var CmToWorld = 1;
 
@@ -32,7 +33,7 @@ module BP3D.Three {
     var scene: BP3D.Model.Scene = model.scene;
 
     if (alreadyScene != null) {
-        scene = alreadyScene;         
+        scene = alreadyScene;
     }
     var model = model;
     this.element = $(element);
@@ -73,23 +74,7 @@ module BP3D.Three {
 
       domElement = scope.element.get(0) // Container
       camera = new THREE.PerspectiveCamera(45, 1, 1, 10000);
-<<<<<<< HEAD
-      
-//      if (false || alreadyRenderer) {
-//          renderer = alreadyRenderer;
-//          hasOwnRenderer = false;
-//      }
-//      else {	
-        renderer = new THREE.WebGLRenderer({
-            antialias: true,
-            preserveDrawingBuffer: true // required to support .toDataURL()
-        });
-        renderer.autoClear = false,
-        renderer.shadowMapEnabled = true;
-        renderer.shadowMapSoft = true;
-        renderer.shadowMapType = THREE.PCFSoftShadowMap;
-//    }
-=======
+
       renderer = new THREE.WebGLRenderer({
         antialias: true,
         preserveDrawingBuffer: true // required to support .toDataURL()
@@ -98,7 +83,6 @@ module BP3D.Three {
         renderer.shadowMap.enabled = true;
       renderer.shadowMapSoft = true;
       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
->>>>>>> pr/2
 
       var skybox = new Three.Skybox(scene);
 
@@ -142,11 +126,7 @@ module BP3D.Three {
     }
 
     function spin() {
-      if (options.spin && !mouseOver && !hasClicked) {
-        var theta = 2 * Math.PI * options.spinSpeed * (Date.now() - lastRender);
-        scope.controls.rotateLeft(theta);
-        scope.controls.update()
-      }
+        scope.controls.update();
     }
 
     this.dataUrl = function () {
