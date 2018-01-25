@@ -1,5 +1,3 @@
-/// <reference path="../../lib/jQuery.d.ts" />
-/// <reference path="../../lib/three.d.ts" />
 /// <reference path="controller.ts" />
 /// <reference path="floorPlan.ts" />
 /// <reference path="lights.ts" />
@@ -75,6 +73,7 @@ module BP3D.Three {
 
       domElement = scope.element.get(0) // Container
       camera = new THREE.PerspectiveCamera(45, 1, 1, 10000);
+<<<<<<< HEAD
       
 //      if (false || alreadyRenderer) {
 //          renderer = alreadyRenderer;
@@ -90,6 +89,16 @@ module BP3D.Three {
         renderer.shadowMapSoft = true;
         renderer.shadowMapType = THREE.PCFSoftShadowMap;
 //    }
+=======
+      renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        preserveDrawingBuffer: true // required to support .toDataURL()
+      });
+      renderer.autoClear = false,
+        renderer.shadowMap.enabled = true;
+      renderer.shadowMapSoft = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+>>>>>>> pr/2
 
       var skybox = new Three.Skybox(scene);
 

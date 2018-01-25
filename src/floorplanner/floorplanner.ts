@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 /// <reference path="../../lib/jQuery.d.ts" />
 /// <reference path="../model/corner.ts" />
+=======
+>>>>>>> pr/2
 /// <reference path="../model/floorplan.ts" />
 /// <reference path="../model/wall.ts" />
 /// <reference path="floorplanner_view.ts" />

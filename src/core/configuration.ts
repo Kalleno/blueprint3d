@@ -84,7 +84,7 @@ module BP3D.Core {
       cornerColor: "#cccccc",
       cornerColorHover: "#008cba",
       wallHeight: 250,
-      wallThickness: 10
+      wallThickness: 6
     };
 
     /** Set a configuration parameter. */
