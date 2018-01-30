@@ -1,10 +1,11 @@
-## See it
+## Whats this?
 
-This repository includes an example application built using blueprint3d:
+This is a fork of the awesome project which original found here: http://furnishup.github.io/blueprint3d/example/.
 
-### http://furnishup.github.io/blueprint3d/example/
+In this Version you'll get a touch compatible version of the original project. 
+You'll get a new user interface which is reworked to work better on touch devices too!
 
-## What is this?
+## Original "Whats this?"
 
 This is a customizable application built on three.js that allows users to design an interior space such as a home or apartment. Below are screenshots from our Example App (link above). 
 
@@ -26,38 +27,22 @@ To get started, clone the repository and ensure you npm >= 3 and grunt installed
 
     npm install
     grunt
+    
+The latter command generates `example/js/blueprint3d.js` from `src`. It will also automatically starts a local webserver.
 
-The latter command generates `example/js/blueprint3d.js` from `src`.
-
-The easiest way to run locally is to run a local server from the `example` directory. There are plenty of options. One uses Python's built in webserver:
-
-    cd example
-
-    # Python 2.x
-    python -m SimpleHTTPServer
-
-    # Python 3.x
-    python -m http.server
-
-Then, visit `http://localhost:8000` in your browser.
-
-## Contribute!
-
-This project requires a lot more work. In general, it was rushed through various prototype stages, and never refactored as much as it probably should be. We need your help!
-
-Please contact us if you are interested in contributing.
 
 ### Todos
 
+- Complete touch compatibility
+- Create new Screenshots
+- Rework Codebase
 - More complete documentation (based on the TypeDoc comments)
 - Test suite (e.g. jasmine)
 - Make it easier to build a complete application using blueprint3d (cleaner API, more inclusive base, easier integration with a backend)
 - Better serialization format for saving/loading "designs"
 - Remove the dependency on jquery from the core source!
 - Better use of npm conventions and packaging
-- Various bug fixes
 - refactor three/* - use of classes, lambdas
-- update to current threejs
 - introduce a more formal persistency format
 - put all relevant settings into Core.Configuration to make them read-/writeable, User settings?
 - complete type docs for all entities

@@ -40,17 +40,46 @@ module BP3D.Three {
     this.needsUpdate = true;
 
     function init() {
-
-
       element.mousedown(mouseDownEvent);
       element.mouseup(mouseUpEvent);
       element.mousemove(mouseMoveEvent);
+
+      let touchElement = $(element)[0];
+      touchElement.addEventListener("touchstart", function(event) {
+        mouseDownEvent(translateTouchEventToMouseEvent(event));
+      }, false);
+      touchElement.addEventListener("touchmove", function(event) {
+        mouseMoveEvent(translateTouchEventToMouseEvent(event));
+      }, false);
+      touchElement.addEventListener("touchend", function(event) {
+        mouseUpEvent(translateTouchEventToMouseEvent(event));
+      }, false);
+
+
 
       mouse = new THREE.Vector2();
 
       scene.itemRemovedCallbacks.add(itemRemoved);
       scene.itemLoadedCallbacks.add(itemLoaded);
       setGroundPlane();
+    }
+
+    function translateTouchEventToMouseEvent(event) {
+        var touches = event.changedTouches,
+            first = touches[0],
+            type = "";
+        switch(event.type){
+            case "touchstart": type = "mousedown"; break;
+            case "touchmove":  type = "mousemove"; break;
+            case "touchend":   type = "mouseup";   break;
+            default:           return;
+        }
+        var simulatedEvent = document.createEvent("MouseEvent");
+        simulatedEvent.initMouseEvent(type, true, true, window, 1,
+            first.screenX, first.screenY,
+            first.clientX, first.clientY, false,
+            false, false, false, 0/*left*/, null);
+        return simulatedEvent;
     }
 
     // invoked via callback when item is loaded
@@ -137,13 +166,14 @@ module BP3D.Three {
     }
 
     function mouseMoveEvent(event) {
-      if (scope.enabled) {
-        event.preventDefault();
+       if (scope.enabled) {
+          event.preventDefault();
 
-        mouseMoved = true;
+          mouseMoved = true;
 
-        mouse.x = event.clientX;
-        mouse.y = event.clientY;
+          mouse.x = event.clientX;
+          mouse.y = event.clientY;
+
 
         if (!mouseDown) {
           updateIntersections();

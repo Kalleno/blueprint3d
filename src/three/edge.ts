@@ -91,7 +91,7 @@ module BP3D.Three {
         HierarchyConfig.FirstFreeNumber++;
 
       } else {
-        console.log(HierarchyConfig);
+        // console.log(HierarchyConfig);
       }
         
       planes.forEach((plane) => {
