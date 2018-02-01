@@ -66,7 +66,7 @@ module BP3D.Core {
   export class Configuration {
     /** Configuration data loaded from/stored to extern. */
     private static data: {[key: string]: any} = {
-      dimUnit: dimInch,
+      dimUnit: dimCentiMeter,
       gridSpacing: 20,
       gridWidth: 1,
       gridColor: "#f1f1f1",

@@ -191,12 +191,14 @@ module BP3D.Items {
 
     /** */
     public setSelected() {
+      this.setButton(true);
       this.selected = true;
       this.updateHighlight();
     };
 
     /** */
     public setUnselected() {
+      this.setButton(false);
       this.selected = false;
       this.updateHighlight();
     };
@@ -235,6 +237,14 @@ module BP3D.Items {
         }
 
         this.rotation.y = angle;
+      }
+    }
+
+    public setButton(visible) {
+      if(visible == true) {
+        $('#editItem').addClass('visible_item')
+      }else {
+        $('#editItem').removeClass('visible_item')
       }
     }
 

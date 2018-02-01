@@ -376,20 +376,31 @@ var TextureSelector = function (blueprint3d, sideMenu) {
   }
 
   function wallClicked(halfEdge) {
+    setButton(true);
     currentTarget = halfEdge;
     $("#floorTexturesDiv").hide();  
     $("#wallTextures").show();  
   }
 
   function floorClicked(room) {
+    setButton(true);
     currentTarget = room;
     $("#wallTextures").hide();  
     $("#floorTexturesDiv").show();  
   }
 
   function reset() {
+    setButton(false);
     $("#wallTextures").hide();  
     $("#floorTexturesDiv").hide();  
+  }
+
+  function setButton(visible) {
+      if(visible == true) {
+          $('#editItem').addClass('visible_wall_floor')
+      }else {
+          $('#editItem').removeClass('visible_wall_floor')
+      }
   }
 
   init();
